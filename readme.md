@@ -1,9 +1,11 @@
 # Comparison of numerical ordinary differential equation solvers through pendulum simulations
 
  ### `Diagram of single and double pendulums`
- <img src="/images/pendulums.png" align="center" height= "250" width="250">
+ <p align="center"> 
+ <img src="/images/pendulums.png" height= "250" width="250">
+ </p>
 
-`The Scripts are best run in the terminal using Python 2`
+`The Scripts are best run in the terminal using Python 2. When running animations make sure that the plot is displayed outside of the terminal as it will only show a blank grid if it is show inline.`
 
 The scripts are used to model the oscillators and the last script also produces animations.
 
@@ -40,12 +42,10 @@ changed by the user. Graphs are plotted and so are animations.
 # Sample Outputs
 
 Below are some sample plots showing the angular displacement in various situations and final plot is a graph of the pendulum's energy over time.
-
-<img src="/images/R001G0.png" align="center" height= "400" width="400">
-
-<img src="/images/R100G1.png" align="center" height= "400" width="400">
-
-<img src="/images/R1G1.png" align="center" height= "400" width="400">
-
-<img src="/images/graph1rk4h0dot01.png" align="center" height= "400" width="400">
-
+<p align="center"> 
+<img src="/images/R001G0.png" align="middle" height= "400" width="400"/> <img src="/images/R100G1.png" align="center" height= "400" width="400">
+</p>
+ 
+<p align="center"> 
+<img src="/images/R1G1.png" align="center" height= "400" width="400"/> <img src="/images/graph1rk4h0dot01.png" align="center" height= "400" width="400">
+</p>
