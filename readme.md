@@ -25,7 +25,7 @@ Energy can be calculated.
 Each script simulates the motion of a pendulum using the given ODE solver. 
 Various graphs are plotted and the stability of the solution is tested.
 The file is preset to create a double pendulum but can be changed to use a single pendulum.
-If the object is initialized with the numOsc==1 the pendulum is a single pendulum, if 'numOsc' == 2 the pendulum is a double pendulum. 
+If the object is initialized with the `numOsc`== 1 the pendulum is a single pendulum, if `numOsc` == 2 the pendulum is a double pendulum. 
 For a single pendulum the scaled damping constant is dHat and the initial conditions are arguments.
 For the double pendulum the mass of the first pendulum, `m`, mass Ratio `R`, scaled damping constant `G`, are arguments and can all be varied.  
 
