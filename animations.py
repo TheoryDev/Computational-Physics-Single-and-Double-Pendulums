@@ -5,7 +5,7 @@ This script creates animations using matplotlib.animate. An Oscillator class obj
 Then the equations of motions are solved, it is set to use RK4 but this can be
 change by the user. Graphs are plotted and so are animations.
 
-@author: Corey
+
 """
 import numpy as np
 from matplotlib import pyplot as plt
@@ -26,22 +26,29 @@ x2,y2 = np.sin(A.theta[:,1])+np.sin(A.theta[:,0]),-np.cos(A.theta[:,1])-np.cos(A
 h=A.h
 fig = plt.figure()
 ax = fig.add_subplot(111, autoscale_on=False, xlim=(-2.1, 2.1), ylim=(-2.1, 0.1))
-string, = ax.plot([],[],'o-',lw=2)
-time_template = 'time = %.1fs'
-time_text = ax.text(0.05,0.9,'',transform=ax.transAxes)
-def init():
-    string.set_data([], [])
-    time_text.set_text('')
+ax.grid() 
+time_frame = 'time = %.1fs' # creates time frame
+P = np.arange(1,len(x1))
+time_text = ax.text(0.01,0.95,'',transform=ax.transAxes) # shows time on animation
+string, = ax.plot([],[],'go-',lw=2) # creates pendulum string with bobs
+
+def pendulumAni(j): # function that will be animated
+    time_text.set_text(time_frame % (j*h))      
+    X = [0., x1[j],x2[j]]
+    Y = [0., y1[j],y2[j]]
+    string.set_data(X,Y)
+         
     return string, time_text
 
-def animate(i):      
-    X = [0, x1[i],x2[i]]
-    Y = [0, y1[i],y2[i]]
-    string.set_data(X,Y)
-    time_text.set_text(time_template % (i*h))        
+
+def original(): # initilisation for animation
+    time_text.set_text('')
+    string.set_data([], [])   
     return string, time_text
-ax.grid()        
-motion = animation.FuncAnimation(fig,animate,np.arange(1,len(x1)) ,interval=2, blit=True, init_func=init)
+
+
+       
+motion = animation.FuncAnimation(fig,pendulumAni, P ,interval=2, blit=True, init_func=original)
 
 plt.show()
 

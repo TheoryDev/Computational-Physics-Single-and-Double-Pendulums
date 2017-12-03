@@ -9,7 +9,7 @@ If the object is initialized with the numOsc==1 the pendulum is a single pendulu
 if numOsc==2 the pendulum is a double pendulum. For a single pendulum the scaled damping constant dHat
 and the initial conditions are arguments.For the double pendulum the mass of the first pendulum, m, mass Ratio, R, scaled damping constant G,
 are arguments and can all be varied. Additionally small == False so that small angle approximations are not used.
-@author: Corey
+
 """
 
 

@@ -11,7 +11,7 @@ if numOsc==2 the pendulum is a double pendulum. For a single pendulum the scaled
 and the initial conditions are arguments.For the double pendulum the mass of the first pendulum, m, mass Ratio, R, scaled damping constant G,
 are arguments and can all be varied. 
 
-@author: Corey
+
 """
 
 import ode4

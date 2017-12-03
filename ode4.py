@@ -2,7 +2,6 @@
 """
 Created on Tue Nov 01 12:55:47 2016
 
-@author: CJM214
 
 This module contains the Oscillator class that creates oscillator objects. 
 The objects have different methods that provide numerical solutions to the differential equations and also plot graphs.
@@ -55,9 +54,9 @@ class Oscillator: # put in instructions doc string for intial and operator
         self.solved2 = False # If == True ,class methods know the oscillator system's energy has been calculated
         self.small = small # If == True, small angle approximations are used , if == False, they are not
         if self.small==True:
-            print ("Small angle approximations will be used")
+            print "Small angle approximations will be used"
         if self.small == False:
-            print ("Small angle approximations will not be used")
+            print "Small angle approximations will not be used"
         
     def ExEuler(self,start=0.,end=50.,step=0.05):
         """ The ExEuler class method is an Explict Euler numerical ode solver method that works on systems of linear ODE's in marix form. Start is the starting point in time, end is the end point and step is the step size. Note time is in natural units """
@@ -199,7 +198,7 @@ class Oscillator: # put in instructions doc string for intial and operator
             The plot are produced for a class object for which the equations of motion have already been solved.
             If x == True, angular displacement is plotted, if x == True, angular velocity is plotted, if E == True energy is plotted
         """
-        tmp = range(int(len(self.x0)/2)) # number of oscillators
+        tmp = range(len(self.x0)/2) # number of oscillators
         if self.solved == False:
             raise Exception ("The differential equations must first be solved to provide solutions to plot")
         if self.solved == True:
@@ -246,8 +245,9 @@ class Oscillator: # put in instructions doc string for intial and operator
                         plt.plot(self.t,self.KE,label="Kinetic energy ")
                         plt.plot(self.t,self.PE,label="Potential energy ") 
                         plt.xlabel('Scaled Time')
+                        plt.ylabel('Scaled Energy')
                         plt.legend()               # Plots total energy allowing for great visual comparisons of energy conservation  
-        plt.show()
+   
        
     def energy(self,spread=False):
         """ This class method calculates the energy for an oscillator object. 
@@ -295,7 +295,7 @@ class Oscillator: # put in instructions doc string for intial and operator
             self.spreadE = np.std(self.E) # standard deviation of energy
             self.solved2 = True # Allows other class methods to tell the energy has been calcualted.
         if spread == True:
-            print ("Standard deviation is  " , self.spreadE) 
+            print "Standard deviation is  " , self.spreadE 
                
 
     def stability(self,tolerance= 0.1 ): # make way of knowing if it is damped
@@ -317,14 +317,14 @@ class Oscillator: # put in instructions doc string for intial and operator
            
             self.tests.append(test)             
             if test >= tolerance:               
-                print ("unstable at point number " +str(i))
+                print "unstable at point number " +str(i) 
                 self.worked = False
                 break
     
             
         else:
             self.worked = True
-            print ('stability test sucessful')      
+            print 'stability test sucessful'      
        
             
    
