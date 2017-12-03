@@ -1,12 +1,15 @@
-## Comparison of numerical ordinary differential equation solvers through pendulum simulations
+# Comparison of numerical ordinary differential equation solvers through pendulum simulations
+
+ ### `Diagram of single and double pendulums`
+ <img src="/images/pendulums.png" align="center" height= "250" width="250">
 
 `The Scripts are best run in the terminal using Python 2`
 
 The scripts are used to model the oscillators and the last script also produces animations.
 
-#  ode4.py:
+#  Module to simulate physics:
 
-This module contains the Oscillator class that creates oscillator objects. 
+`ode4.py` contains the Oscillator class that creates oscillator objects. 
 The objects have different methods that provide numerical solutions to the differential equations and also plot graphs.
 The oscillators can be either singe or double pendulums.
 The Explicit Euler, Implicit Euler, Leapfrog and Fourth-Order Runge-Kutta finite difference numerical methods are all 
@@ -26,10 +29,23 @@ If the object is initialized with the numOsc==1 the pendulum is a single pendulu
 For a single pendulum the scaled damping constant is dHat and the initial conditions are arguments.
 For the double pendulum the mass of the first pendulum, `m`, mass Ratio `R`, scaled damping constant `G`, are arguments and can all be varied.  
 
-# There are two special scripts:
+## There are two special scripts:
 
 EulerForwardArbitary.py: solves differential equations without using small angle approximations by setting the parameter `small` == False.
 
 animations.py: This script creates animations using matplotlib.animate. An Oscillator class object is created.
 Then the equations of motions are solved, it is set to use RK4 but this can be
 changed by the user. Graphs are plotted and so are animations.
+
+# Sample Outputs
+
+Below are some sample plots showing the angular displacement in various situations and final plot is a graph of the pendulum's energy over time.
+
+<img src="/images/R001G0.png" align="center" height= "400" width="400">
+
+<img src="/images/R100G1.png" align="center" height= "400" width="400">
+
+<img src="/images/R1G1.png" align="center" height= "400" width="400">
+
+<img src="/images/graph1rk4h0dot01.png" align="center" height= "400" width="400">
+
